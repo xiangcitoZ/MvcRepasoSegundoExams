@@ -1,0 +1,60 @@
+﻿@model MvcRepasoSegundoExam.Models.Libro
+
+@{
+    ViewData["Title"] = "Details";
+    List<BlobModel> listBlobs = ViewData["PORTADAS"] as List<BlobModel>;
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Portada)
+    </dt>
+    @foreach (BlobModel blob in listBlobs)
+    {
+        @if (Model.Portada == blob.Nombre)
+        {
+            <dd class="col-sm-10">
+                <img src="@blob.Url" height="400" width="300" />
+            </dd>
+        }
+    }
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Editorial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Editorial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resumen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resumen)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Precio)€
+        </dd>
+
+    </dl>
+
+    <a asp-controller="Tienda" asp-action="RealizarPedido" asp-route-idlibro="@Model.IdLibro" class="btn btn-info" >Comprar</a>
+</div>

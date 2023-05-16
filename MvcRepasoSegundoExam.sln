@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcRepasoSegundoExam", "MvcRepasoSegundoExam\MvcRepasoSegundoExam.csproj", "{DB566E06-EA2C-43D7-9240-D0110717B3B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB566E06-EA2C-43D7-9240-D0110717B3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB566E06-EA2C-43D7-9240-D0110717B3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB566E06-EA2C-43D7-9240-D0110717B3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB566E06-EA2C-43D7-9240-D0110717B3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16E67978-7B01-46F7-903E-C48D8AF4E076}
+	EndGlobalSection
+EndGlobal

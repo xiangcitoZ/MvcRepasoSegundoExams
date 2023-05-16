@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MvcRepasoSegundoExam.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+    List<BlobModel> listBlobs = ViewData["PORTADAS"] as List<BlobModel>;
+}
+
+<h1>Libros</h1>
+
+
+<div class="row">
+    @foreach (var prod in ViewData["Productos"] as List<Libro>)
+    {
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                @foreach (BlobModel blob in listBlobs)
+                {
+
+                    @if (blob.Nombre == prod.Portada)
+                    {
+                        <div class="col-md-4">
+                            <img src="@blob.Url" class="rounded-start" alt="..." style="height:250px; width: 150px">
+                        </div>
+                    }
+
+                }
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@prod.Titulo</h5>
+                        <p class="card-text">@prod.Resumen.Substring(0, 150)... </p>
+                        <p class="card-text"><small class="text-muted">@prod.Autor</small></p>
+                    </div>
+                    <a asp-action="Details" asp-controller="Tienda" asp-route-id="@prod.IdLibro" class="btn btn-primary">
+                        Detalles del libro
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @if ((int)ViewData["TotalPaginas"] > 1)
+    {
+        <nav aria-label="Navegación de páginas">
+            <ul class="pagination">
+                @for (int i = 1; i <= (int)ViewData["TotalPaginas"]; i++)
+                {
+                    <li class="page-item @(i == (int)ViewData["PaginaActual"] ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { pagina = i })">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>
